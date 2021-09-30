@@ -50,4 +50,8 @@ public class Personnage : MonoBehaviour
         }
 
     }
+
+    void Enter(string objectName) {
+        Debug.Log(objectName);
+    }
 }
