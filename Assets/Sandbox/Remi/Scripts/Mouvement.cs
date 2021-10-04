@@ -9,18 +9,24 @@ public class Mouvement : MonoBehaviour
     private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 30.0f;
-    //dadad
+    private float playerSpeed = 150.0f;
+    
     private float gravityValue = -9.81f;
 
+    
+
+
+    public Animator porteAnim;
     private void Start()
     {
         controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        
     }
 
     void Update()
     {
+        
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -42,4 +48,18 @@ public class Mouvement : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+    
+    public void Ouvrir(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            porteAnim.SetTrigger("dedans");
+        }
+            
+        
+    }
+
+    
 }

@@ -14,10 +14,18 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "8b6a5e48-679c-4429-bc29-e41e26642aa7",
-                    "expectedControlType": "Vector2",
+                    "name": "Ouvrir",
+                    "type": "Button",
+                    "id": "ed61f5a6-5612-4c49-bc7f-c5472e5d6254",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Camera",
+                    "type": "Button",
+                    "id": "d664f674-78ff-47a9-9f3f-475a1c715842",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -36,12 +44,23 @@
                 },
                 {
                     "name": "",
-                    "id": "8c72b004-4fc0-4350-a0e6-ae708b91cfa2",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "78383e22-20e5-4b40-ae1b-9a0e7ce5d615",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look",
+                    "action": "Ouvrir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0e5321c-e703-4697-a81c-c4d09cf4e218",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
