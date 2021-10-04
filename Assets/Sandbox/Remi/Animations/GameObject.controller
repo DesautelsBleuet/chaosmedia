@@ -35,7 +35,13 @@ AnimatorController:
   m_Name: GameObject
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: dedans
+  - m_Name: Touche
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Play
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -63,7 +69,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: dedans
+    m_ConditionEvent: Touche
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5352063429845236902}
@@ -90,7 +96,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5352063429845236902}
-    m_Position: {x: 290, y: 100, z: 0}
+    m_Position: {x: 350, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 2113553122725322}

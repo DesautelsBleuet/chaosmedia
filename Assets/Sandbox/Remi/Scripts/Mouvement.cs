@@ -14,11 +14,13 @@ public class Mouvement : MonoBehaviour
     private float gravityValue = -9.81f;
 
     
+    public Animator animPorte;
 
-
-    public Animator porteAnim;
+    public HotSpot scriptHot;
+    
     private void Start()
     {
+        
         controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         
@@ -53,9 +55,9 @@ public class Mouvement : MonoBehaviour
     public void Ouvrir(InputAction.CallbackContext context)
     {
 
-        if (context.performed)
+        if (context.performed && scriptHot.anim == true)
         {
-            porteAnim.SetTrigger("dedans");
+            animPorte.SetBool("Touche", true);
         }
             
         
