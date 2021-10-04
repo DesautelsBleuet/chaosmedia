@@ -10,7 +10,7 @@ public class Mouvement : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = 30.0f;
-    
+    //dadad
     private float gravityValue = -9.81f;
 
     private void Start()
