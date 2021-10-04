@@ -12,10 +12,15 @@ public class Personnage : MonoBehaviour
     public CharacterController perso; //Contrôleur du personnage
 
     //Limites de jeu
-    private float limiteXPos = 3.38f;
+/*    private float limiteXPos = 3.38f;
     private float limiteXNeg = -5.51f;
     private float limiteZPos = 3.21f;
-    private float limiteZNeg = -5.71f;
+    private float limiteZNeg = -5.71f;*/
+
+    private float limiteXPos = 5f;
+    private float limiteXNeg = -5f;
+    private float limiteZPos = 5f;
+    private float limiteZNeg = -5f;
 
     //Variables de movement
     public Vector2 valMov;
