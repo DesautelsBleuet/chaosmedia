@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     float timer = 300;
     bool timerIsRunning = true;
     public Text timeText;
+    public GameObject player;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
                 DisplayTime(timer);
             }
             else {
-                Debug.Log("The End");
+                player.SendMessage("Stop");
                 timer = 0;
                 timerIsRunning = false;
             }
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
 {
+        timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
