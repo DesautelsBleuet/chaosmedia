@@ -20,10 +20,10 @@ public class Personnage : MonoBehaviour
 
     //Variables de movement
     public Vector2 valMov;
-    public float vitesseMouvement;
+    public float vitesseMouvement = 4f;
 
     void OnMove(InputValue value)
-    {
+    {   
         //Obtenir la valeur de mouvement dans Unity
         valMov = value.Get<Vector2>(); 
         
@@ -51,16 +51,16 @@ public class Personnage : MonoBehaviour
         );
     }
 
-    void FixedUpdate() {
+    // void FixedUpdate() {
+    // }
+
+    void Update()
+    {
         if (canMove) {
         //Bouger personnage
         controller.transform.Translate(new Vector3(valMov.x, 0, valMov.y) * vitesseMouvement * Time.deltaTime);
            
         }
-    }
-
-    void Update()
-    {
         //Calculer limites de jeu
         if (controller.transform.position.x >= limiteXPos) {
             controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
