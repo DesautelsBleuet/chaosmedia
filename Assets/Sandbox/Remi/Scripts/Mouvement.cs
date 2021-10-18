@@ -57,7 +57,8 @@ public class Mouvement : MonoBehaviour
 
         if (context.performed && scriptHot.anim == true)
         {
-            animPorte.SetBool("Touche", true);
+            Debug.Log("dasd");
+            animPorte.SetTrigger("Play");
         }
             
         

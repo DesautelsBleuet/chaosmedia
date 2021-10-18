@@ -12,7 +12,8 @@ public class HotSpot : MonoBehaviour
     
     private void OnTriggerEnter(Collider other){
         if(other.tag == "Player"){
-            animPorte.SetTrigger("Play");
+           animPorte.SetBool("Touche", true); 
+            
             anim = true;
         }
     }
