@@ -1713,7 +1713,6 @@ GameObject:
   - component: {fileID: 1730288547}
   - component: {fileID: 1730288546}
   - component: {fileID: 1730288545}
-  - component: {fileID: 1730288544}
   - component: {fileID: 1730288543}
   m_Layer: 0
   m_Name: Zone salade
@@ -1732,18 +1731,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7023d1920a8ab1145918648bba3ecac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1730288544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730288542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff67582aae79da94ea0790aae680ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1730288545
