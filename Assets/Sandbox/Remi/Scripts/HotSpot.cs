@@ -9,12 +9,17 @@ public class HotSpot : MonoBehaviour
     public bool anim;
 
     
-    
-    private void OnTriggerEnter(Collider other){
+    void OnTriggerExit(Collider other){
+if(other.tag == "Player"){
+            anim = false;
+            animPorte.SetBool("Touche", false); 
+        }   
+    }
+    void OnTriggerEnter(Collider other){
         if(other.tag == "Player"){
-           animPorte.SetBool("Touche", true); 
-            
             anim = true;
+            animPorte.SetBool("Touche", true); 
         }
     }
+
 }
