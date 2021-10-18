@@ -506,7 +506,7 @@ MonoBehaviour:
   joueur: {fileID: 431230089}
   controller: {fileID: 250245372}
   valMov: {x: 0, y: 0}
-  vitesseMouvement: 2
+  vitesseMouvement: 4
 --- !u!54 &250245371
 Rigidbody:
   m_ObjectHideFlags: 0
