@@ -13,6 +13,7 @@ public class Mouvement : MonoBehaviour
     
     private float gravityValue = -9.81f;
 
+    private float controllerHeight = 4.11f;
     
     public Animator animPorte;
 
@@ -20,10 +21,10 @@ public class Mouvement : MonoBehaviour
     
     private void Start()
     {
-        
+       
         controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
-        
+        controller.height = controllerHeight;
     }
 
     void Update()
