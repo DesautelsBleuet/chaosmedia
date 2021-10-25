@@ -15,15 +15,24 @@ public class Mouvement : MonoBehaviour
 
     private float controllerHeight = 4f;
     
+    [Header("Animations")]
     public Animator animPorte;
     public Animator animStove;
-
     public Animator animFour;
-    public HotSpot scriptHot;
-    
-    public HotSpot scriptHot2;
 
+    [Header("Hotspots")]
+    public HotSpot scriptHot;
+    public HotSpot scriptHot2;
     public HotSpot scriptHot3;
+
+    
+    //Limites de jeu
+    private float limiteXPos = 3.6f;
+    private float limiteXNeg = -2.4f;
+    private float limiteZPos = 2f;
+    private float limiteZNeg = -3.8f;
+
+
     private void Start()
     {
        
@@ -50,11 +59,24 @@ public class Mouvement : MonoBehaviour
             gameObject.transform.forward = move;
         }
 
-        
-        
-
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        
+        //Calculer limites de jeu
+        if (controller.transform.position.x >= limiteXPos) {
+            controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
+        } 
+        else if (controller.transform.position.x <= limiteXNeg) {
+            controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
+        }
+    
+        if (controller.transform.position.z >= limiteZPos) {
+            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
+        } 
+        else if (controller.transform.position.z <= limiteZNeg) {
+            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
+        }
     }
 
     
