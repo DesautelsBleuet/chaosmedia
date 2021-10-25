@@ -9,16 +9,21 @@ public class Mouvement : MonoBehaviour
     private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 150.0f;
+    private float playerSpeed = 2f;
     
     private float gravityValue = -9.81f;
 
-    private float controllerHeight = 4.11f;
+    private float controllerHeight = 4f;
     
     public Animator animPorte;
+    public Animator animStove;
 
+    public Animator animFour;
     public HotSpot scriptHot;
     
+    public HotSpot scriptHot2;
+
+    public HotSpot scriptHot3;
     private void Start()
     {
        
@@ -33,7 +38,7 @@ public class Mouvement : MonoBehaviour
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = 0f * -1f;
         }
 
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
@@ -58,10 +63,19 @@ public class Mouvement : MonoBehaviour
 
         if (context.performed && scriptHot.anim == true)
         {
-            Debug.Log("dasd");
-            animPorte.SetTrigger("Play");
-        }
             
+            animPorte.SetTrigger("Play");
+            
+        }else if(context.performed && scriptHot2.anim == true){
+            
+            
+            animStove.SetTrigger("Play");
+        }
+        else if(context.performed && scriptHot3.anim == true){
+            
+            
+            animFour.SetTrigger("Play");
+        }     
         
     }
 
