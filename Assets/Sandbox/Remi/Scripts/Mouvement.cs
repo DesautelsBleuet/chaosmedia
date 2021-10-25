@@ -47,7 +47,7 @@ public class Mouvement : MonoBehaviour
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f * -1f;
+            playerVelocity.y = 0f;
         }
 
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
@@ -63,20 +63,20 @@ public class Mouvement : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
 
         
-        //Calculer limites de jeu
-        if (controller.transform.position.x >= limiteXPos) {
-            controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
-        } 
-        else if (controller.transform.position.x <= limiteXNeg) {
-            controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
-        }
+        // //Calculer limites de jeu
+        // if (controller.transform.position.x >= limiteXPos) {
+        //     controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
+        // } 
+        // else if (controller.transform.position.x <= limiteXNeg) {
+        //     controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
+        // }
     
-        if (controller.transform.position.z >= limiteZPos) {
-            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
-        } 
-        else if (controller.transform.position.z <= limiteZNeg) {
-            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
-        }
+        // if (controller.transform.position.z >= limiteZPos) {
+        //     controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
+        // } 
+        // else if (controller.transform.position.z <= limiteZNeg) {
+        //     controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
+        // }
     }
 
     
