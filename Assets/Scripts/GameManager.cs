@@ -12,12 +12,11 @@ public class GameManager : MonoBehaviour
 
     
 
-    public void startSocket(){
+    
 
-        
-    }
+    public void Start(){
 
-    async void Start(){
+
         websocket = new WebSocket("ws://chaosmedia.herokuapp.com/socket/4");
 
         websocket.OnOpen += () =>
