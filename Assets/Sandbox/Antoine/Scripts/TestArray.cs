@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class TestArray : MonoBehaviour
 {
-    string[] contentArray = new string[] {};
+    //pain, viande, fromage, tomate, laitue, jus
+    string[] ingredientsChoisis = new string[] {};
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
 
     //----------Repas
     string[] brochetteArray = new string[] {"viande", "laitue", "tomate"};
     string[] burgerArray = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
     string[] croqueMonsieurArray = new string[] {"fromage", "pain", "viande"};
-    string[] jelloArray = new string[] {"jello"};
-    string[] platViandeArray = new string[] {"viande"};
-    string[] saladeArray = new string[] {"laitue", "tomate"};
+    string[] jelloArray = new string[] {"jus"};
+    string[] platViandeArray = new string[] {"viande","laitue"};
+    string[] saladeArray = new string[] {"laitue", "tomate", "fromage"};
+    string[] sandwichArray = new string[] {"pain", "viande", "tomate", "laitue"};
 
     void Start()
     {
@@ -38,14 +40,14 @@ public class TestArray : MonoBehaviour
                 allNeeded.Add(ingredient);
             }   
             
-            if (contentArray.Count() > 0) {
-                foreach (var ingredient in contentArray)
+            if (ingredientsChoisis.Count() > 0) {
+                foreach (var ingredient in ingredientsChoisis)
                     {
                     if (!ingredientsNeeded.Contains(ingredient)) {
                             done = "false";
                             break;
                         } else {
-                            done = "half";
+                            done = "pasComplete";
                             allNeeded.Remove(ingredient);
                             if (allNeeded.Count == 0) {
                                 done = "true";
@@ -53,14 +55,14 @@ public class TestArray : MonoBehaviour
                         }
                     }
             } else {
-            done = "half";
+            done = "pasComplete";
             }
 
         if (done == "false")
             {
                 Debug.Log(repas);
                 Debug.Log("ne peut pas être fait");
-            } else if (done == "half") {
+            } else if (done == "pasComplete") {
                 
                 Debug.Log(repas);
                 Debug.Log("n'est pas terminé");
