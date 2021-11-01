@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class TestArray : MonoBehaviour
 {
+    
     //pain, viande, fromage, tomate, laitue, jus
-    string[] ingredientsChoisis = new string[] {};
+    // string[] ingredientsChoisis = new string[] {};
+    List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
 
     //----------Repas
@@ -17,9 +19,9 @@ public class TestArray : MonoBehaviour
     string[] platViandeArray = new string[] {"viande","laitue"};
     string[] saladeArray = new string[] {"laitue", "tomate", "fromage"};
     string[] sandwichArray = new string[] {"pain", "viande", "tomate", "laitue"};
+    string[] tempArray = new string[] {"fromage","jus"};
 
-    void Start()
-    {
+    void Start() {
         //Ajout repas
         repasArray.Add("brochette", brochetteArray);
         repasArray.Add("burger", burgerArray);
@@ -27,7 +29,17 @@ public class TestArray : MonoBehaviour
         repasArray.Add("jello", jelloArray);
         repasArray.Add("platViande", platViandeArray);
         repasArray.Add("salade", saladeArray);
-       
+        repasArray.Add("temp", tempArray);
+    }
+
+    void addIngredient(string ingredient) {
+        ingredientsChoisis.Add(ingredient);
+        verify();
+    }
+
+    void verify()
+    {
+      
        for (int i = 0; i < repasArray.Count; i++)
        {
             string repas = repasArray.ElementAt(i).Key;
