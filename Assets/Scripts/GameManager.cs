@@ -11,24 +11,26 @@ public class GameManager : MonoBehaviour
     List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
 
-    //----------Repas
-    string[] burgerArray = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
-    string[] platViandeArray = new string[] {"viande","laitue"};
-    string[] brochetteArray = new string[] {"viande", "laitue", "tomate"};
-    string[] sandwichArray = new string[] {"pain", "viande", "tomate", "laitue"};
-    string[] saladeArray = new string[] {"laitue", "tomate", "fromage"};
-    string[] croqueMonsieurArray = new string[] {"fromage", "pain", "viande"};
-    string[] jelloArray = new string[] {"jus"};
+    [Header("Ingrédients des repas")]
+    [ShowOnly] private string[] burgerIngredients = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
+   [ShowOnly] private string[] platViandeIngredients = new string[] {"viande","laitue"};
+   [ShowOnly] private string[] brochetteIngredients = new string[] {"viande", "laitue", "tomate"};
+   [ShowOnly] private string[] sandwichIngredients = new string[] {"pain", "viande", "tomate", "laitue"};
+   [ShowOnly] private string[] saladeIngredients = new string[] {"laitue", "tomate", "fromage"};
+   [ShowOnly] private string[] croqueMonsieurIngredients = new string[] {"fromage", "pain", "viande"};
+   [ShowOnly] private string[] jelloIngredients = new string[] {"jus"};
+
+    private float scoreTotal = 0;
 
     void Start() {
         //Ajout repas
-        repasArray.Add("burger", burgerArray);
-        repasArray.Add("platViande", platViandeArray);
-        repasArray.Add("brochette", brochetteArray);
-        repasArray.Add("sandwich", sandwichArray);
-        repasArray.Add("salade", saladeArray);
-        repasArray.Add("croqueMonsieur", croqueMonsieurArray);
-        repasArray.Add("jello", jelloArray);
+        repasArray.Add("burger", burgerIngredients);
+        repasArray.Add("platViande", platViandeIngredients);
+        repasArray.Add("brochette", brochetteIngredients);
+        repasArray.Add("sandwich", sandwichIngredients);
+        repasArray.Add("salade", saladeIngredients);
+        repasArray.Add("croqueMonsieur", croqueMonsieurIngredients);
+        repasArray.Add("jello", jelloIngredients);
     }
 
     void ajoutIngredient(string ingredient) {
