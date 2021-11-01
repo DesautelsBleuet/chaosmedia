@@ -12,25 +12,25 @@ public class Mouvement : MonoBehaviour
     private float playerSpeed = 2f;
     
     private float gravityValue = -9.81f;
-
-    private float controllerHeight = 4f;
+    private float controllerHeight = 0f;
+    private float controllerCenter = 0.58f;
     
-    [Header("Animations")]
-    public Animator animPorte;
-    public Animator animStove;
-    public Animator animFour;
+    // [Header("Animations")]
+    // public Animator animPorte;
+    // public Animator animStove;
+    // public Animator animFour;
 
-    [Header("Hotspots")]
-    public HotSpot scriptHot;
-    public HotSpot scriptHot2;
-    public HotSpot scriptHot3;
+    // [Header("Hotspots")]
+    // public HotSpot scriptHot;
+    // public HotSpot scriptHot2;
+    // public HotSpot scriptHot3;
 
     
     //Limites de jeu
-    private float limiteXPos = 18f;
-    private float limiteXNeg = 7.7f;
-    private float limiteZPos = -0.9f;
-    private float limiteZNeg = -10f;
+    private float limiteXPos = 5.8f;
+    private float limiteXNeg = -5.7f;
+    private float limiteZPos = 4.8f;
+    private float limiteZNeg = -4.8f;
 
 
     private void Start()
@@ -39,6 +39,7 @@ public class Mouvement : MonoBehaviour
         controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         controller.height = controllerHeight;
+        controller.center = new Vector3(0, controllerCenter, 0);
     }
 
     void Update()
@@ -62,7 +63,7 @@ public class Mouvement : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        //Calculer limites de jeu
+        // Calculer limites de jeu
         if (controller.transform.position.x >= limiteXPos) {
             controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
         } 
@@ -79,26 +80,26 @@ public class Mouvement : MonoBehaviour
     }
 
     
-    public void Ouvrir(InputAction.CallbackContext context)
-    {
+    // public void Ouvrir(InputAction.CallbackContext context)
+    // {
 
-        if (context.performed && scriptHot.anim == true)
-        {
+    //     if (context.performed && scriptHot.anim == true)
+    //     {
             
-            animPorte.SetTrigger("Play");
+    //         animPorte.SetTrigger("Play");
             
-        }else if(context.performed && scriptHot2.anim == true){
-            
-            
-            animStove.SetTrigger("Play");
-        }
-        else if(context.performed && scriptHot3.anim == true){
+    //     }else if(context.performed && scriptHot2.anim == true){
             
             
-            animFour.SetTrigger("Play");
-        }     
+    //         animStove.SetTrigger("Play");
+    //     }
+    //     else if(context.performed && scriptHot3.anim == true){
+            
+            
+    //         animFour.SetTrigger("Play");
+    //     }     
         
-    }
+    // }
 
     
 }

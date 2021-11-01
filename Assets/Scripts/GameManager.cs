@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         websocket.OnMessage += (bytes) =>
     {
         var message = System.Text.Encoding.UTF8.GetString(bytes);
-        Debug.Log(message);
+        Debug.Log(message); 
         // dynamic json = JsonConvert.DeserializeObject(message);
 
         // string code = (string)json.SelectToken("code");
