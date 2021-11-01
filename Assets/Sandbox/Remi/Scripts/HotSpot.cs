@@ -16,7 +16,7 @@ if(other.tag == "Player"){
             anim = false;
             animPorte.SetBool("Touche", false);
             animStove.SetBool("Touche", false); 
-            animFour.SetBool("Touche", true);
+            animFour.SetBool("Touche", false);
         }   
     }
     void OnTriggerEnter(Collider other){
