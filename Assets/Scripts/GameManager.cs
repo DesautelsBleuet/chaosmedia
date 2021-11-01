@@ -1,47 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using NativeWebSocket;
 
 
 public class GameManager : MonoBehaviour
 {
+    //pain, viande, fromage, tomate, laitue, jus
+    List<string> ingredientsChoisis = new List<string>();
+    Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
 
-    WebSocket websocket;
+    //----------Repas
+    string[] burgerArray = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
+    string[] platViandeArray = new string[] {"viande","laitue"};
+    string[] brochetteArray = new string[] {"viande", "laitue", "tomate"};
+    string[] sandwichArray = new string[] {"pain", "viande", "tomate", "laitue"};
+    string[] saladeArray = new string[] {"laitue", "tomate", "fromage"};
+    string[] croqueMonsieurArray = new string[] {"fromage", "pain", "viande"};
+    string[] jelloArray = new string[] {"jus"};
 
-    
+    void Start() {
+        //Ajout repas
+        repasArray.Add("burger", burgerArray);
+        repasArray.Add("platViande", platViandeArray);
+        repasArray.Add("brochette", brochetteArray);
+        repasArray.Add("sandwich", sandwichArray);
+        repasArray.Add("salade", saladeArray);
+        repasArray.Add("croqueMonsieur", croqueMonsieurArray);
+        repasArray.Add("jello", jelloArray);
+    }
 
-    
+    void ajoutIngredient(string ingredient) {
+        ingredientsChoisis.Add(ingredient);
+        verifierRepas();
+    }
 
-    public void Start(){
+    void verifierRepas()
+    {
+      
+       for (int i = 0; i < repasArray.Count; i++)
+       {
+            string repas = repasArray.ElementAt(i).Key;
+            string[] ingredientsNeeded = repasArray.ElementAt(i).Value;
+            List<string> allNeeded = new List<string>();
+            string done = "false";
 
-
-        websocket = new WebSocket("ws://chaosmedia.herokuapp.com/socket/4");
-
-        websocket.OnOpen += () =>
-        {
+            foreach (var ingredient in ingredientsNeeded)
+            {
+                allNeeded.Add(ingredient);
+            }   
             
-            websocket.SendText("dasdad­­");
-        };
-        websocket.OnMessage += (bytes) =>
-    {
-        var message = System.Text.Encoding.UTF8.GetString(bytes);
-        Debug.Log(message); 
-        // dynamic json = JsonConvert.DeserializeObject(message);
+            if (ingredientsChoisis.Count() > 0) {
+                foreach (var ingredient in ingredientsChoisis)
+                    {
+                    if (!ingredientsNeeded.Contains(ingredient)) {
+                            done = "false";
+                            break;
+                        } else {
+                            done = "pasComplete";
+                            allNeeded.Remove(ingredient);
+                            if (allNeeded.Count == 0) {
+                                done = "true";
+                            }
+                        }
+                    }
+            } else {
+            done = "pasComplete";
+            }
 
-        // string code = (string)json.SelectToken("code");
-        // json data = (json)json.SelectToken("data");
+        if (done == "false")
+            {
+                Debug.Log(repas + " ne peut pas être fait"); //Changer pour output
+            } else if (done == "pasComplete") {
+                
+                Debug.Log(repas + " n'est pas terminé, il manque:");
+                foreach (var item in allNeeded)
+                {
+                    Debug.Log(item); //Changer pour output
+                }
+            } else if (done == "true") {
+                Debug.Log(repas + "est terminé"); //Changer pour output
+            }
+        }
 
-        // if(code == "__joined__") {
-        //     Debug.Log("Vous avez rejoint la partie.");
-        // }
-
-    };
     }
-    public void DebutPartie()
-    {
-        SceneManager.LoadScene("scene_alpha"); //charger la scène alpha
-        
-    }
+
 }
