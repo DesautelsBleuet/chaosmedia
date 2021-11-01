@@ -15,15 +15,11 @@ public class Mouvement : MonoBehaviour
     private float controllerHeight = 0f;
     private float controllerCenter = 0.58f;
     
-    // [Header("Animations")]
+    [Header("Animations")]
     // public Animator animPorte;
-    // public Animator animStove;
-    // public Animator animFour;
 
-    // [Header("Hotspots")]
+    [Header("Hotspots")]
     // public HotSpot scriptHot;
-    // public HotSpot scriptHot2;
-    // public HotSpot scriptHot3;
 
     
     //Limites de jeu
@@ -80,26 +76,28 @@ public class Mouvement : MonoBehaviour
     }
 
     
-    // public void Ouvrir(InputAction.CallbackContext context)
-    // {
+    public void Ouvrir(InputAction.CallbackContext context)
+    {
 
-    //     if (context.performed && scriptHot.anim == true)
-    //     {
+        //À modifier pour les animations finales
+
+        // if (context.performed && scriptHot.anim == true)
+        // {
             
-    //         animPorte.SetTrigger("Play");
+        //     animPorte.SetTrigger("Play");
             
-    //     }else if(context.performed && scriptHot2.anim == true){
-            
-            
-    //         animStove.SetTrigger("Play");
-    //     }
-    //     else if(context.performed && scriptHot3.anim == true){
+        // }else if(context.performed && scriptHot2.anim == true){
             
             
-    //         animFour.SetTrigger("Play");
-    //     }     
+        //     animStove.SetTrigger("Play");
+        // }
+        // else if(context.performed && scriptHot3.anim == true){
+            
+            
+        //     animFour.SetTrigger("Play");
+        // }     
         
-    // }
+    }
 
     
 }

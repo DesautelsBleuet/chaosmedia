@@ -1881,7 +1881,6 @@ GameObject:
   m_Component:
   - component: {fileID: 546650759}
   - component: {fileID: 546650761}
-  - component: {fileID: 546650760}
   m_Layer: 0
   m_Name: zone
   m_TagString: Untagged
@@ -1903,22 +1902,6 @@ Transform:
   m_Father: {fileID: 1125114281}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &546650760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546650758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97fa2b949493404d9ef5b9fcb8514bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animPorte: {fileID: 1125114287}
-  animStove: {fileID: 1836834242}
-  animFour: {fileID: 49928111}
-  anim: 0
 --- !u!65 &546650761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4493,7 +4476,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1666702443}
   - component: {fileID: 1666702445}
-  - component: {fileID: 1666702444}
   m_Layer: 0
   m_Name: zone
   m_TagString: Untagged
@@ -4515,22 +4497,6 @@ Transform:
   m_Father: {fileID: 1836834239}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1666702444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666702442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97fa2b949493404d9ef5b9fcb8514bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animPorte: {fileID: 1125114287}
-  animStove: {fileID: 1836834242}
-  animFour: {fileID: 49928111}
-  anim: 0
 --- !u!65 &1666702445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5373,7 +5339,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1959855044}
   - component: {fileID: 1959855046}
-  - component: {fileID: 1959855045}
   m_Layer: 0
   m_Name: zone
   m_TagString: Untagged
@@ -5395,22 +5360,6 @@ Transform:
   m_Father: {fileID: 49928097}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1959855045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959855043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97fa2b949493404d9ef5b9fcb8514bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animPorte: {fileID: 1125114287}
-  animStove: {fileID: 1836834242}
-  animFour: {fileID: 49928111}
-  anim: 0
 --- !u!65 &1959855046
 BoxCollider:
   m_ObjectHideFlags: 0
