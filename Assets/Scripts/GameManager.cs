@@ -10,27 +10,72 @@ public class GameManager : MonoBehaviour
     //pain, viande, fromage, tomate, laitue, jus
     List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
+    Dictionary<string, float> timersArray = new Dictionary<string, float>();
 
     [Header("Ingrédients des repas")]
-    [ShowOnly] private string[] burgerIngredients = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
-   [ShowOnly] private string[] platViandeIngredients = new string[] {"viande","laitue"};
-   [ShowOnly] private string[] brochetteIngredients = new string[] {"viande", "laitue", "tomate"};
-   [ShowOnly] private string[] sandwichIngredients = new string[] {"pain", "viande", "tomate", "laitue"};
-   [ShowOnly] private string[] saladeIngredients = new string[] {"laitue", "tomate", "fromage"};
-   [ShowOnly] private string[] croqueMonsieurIngredients = new string[] {"fromage", "pain", "viande"};
-   [ShowOnly] private string[] jelloIngredients = new string[] {"jus"};
+    [ShowOnly] public string[] burgerIngredients = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
+    private float burgerTimer = 30f;
 
-    private float scoreTotal = 0;
+    [ShowOnly] public string[] platViandeIngredients = new string[] {"viande","laitue"};
+    private float platViandeTimer = 30f;
+
+    [ShowOnly] public string[] brochetteIngredients = new string[] {"viande", "laitue", "tomate"};
+    private float brochetteTimer = 30f;
+
+    [ShowOnly] public string[] sandwichIngredients = new string[] {"pain", "viande", "tomate", "laitue"};
+    private float sandwichTimer = 30f;
+
+    [ShowOnly] public string[] saladeIngredients = new string[] {"laitue", "tomate", "fromage"};
+    private float saladeTimer = 30f;
+
+    [ShowOnly] public string[] croqueMonsieurIngredients = new string[] {"fromage", "pain", "viande"};
+    private float croqueMonsieurTimer = 30f;
+
+    [ShowOnly] public string[] jelloIngredients = new string[] {"jus"};
+    private float jelloTimer = 30f;
+
+    private float scoreTotal = 0f;
+    private int repasChoisi;
+
+    private float timer;
+    private float timerTotal;
+    private float scoreRepas;
+    bool tempsEnCours = false;
+
+    bool repasEstTermine = true;
+
 
     void Start() {
         //Ajout repas
         repasArray.Add("burger", burgerIngredients);
+        timersArray.Add("burger", burgerTimer);
+
         repasArray.Add("platViande", platViandeIngredients);
+        timersArray.Add("platViande", platViandeTimer);
+
         repasArray.Add("brochette", brochetteIngredients);
+        timersArray.Add("brochette", brochetteTimer);
+
         repasArray.Add("sandwich", sandwichIngredients);
+        timersArray.Add("sandwich", sandwichTimer);
+
         repasArray.Add("salade", saladeIngredients);
+        timersArray.Add("salade", saladeTimer);
+
         repasArray.Add("croqueMonsieur", croqueMonsieurIngredients);
+        timersArray.Add("croqueMonsieur", croqueMonsieurTimer);
+
         repasArray.Add("jello", jelloIngredients);
+        timersArray.Add("jello", jelloTimer);
+
+
+
+        //Choix du repas
+        repasChoisi = Random.Range(1, repasArray.Count);
+        scoreRepas = timersArray.ElementAt(repasChoisi).Value;
+        timer = timersArray.ElementAt(repasChoisi).Value;
+        timerTotal = timer;
+        tempsEnCours = true;
     }
 
     void ajoutIngredient(string ingredient) {
@@ -83,9 +128,53 @@ public class GameManager : MonoBehaviour
                 }
             } else if (done == "true") {
                 Debug.Log(repas + "est terminé"); //Changer pour output
+                repasEstTermine = true;
             }
         }
 
+    }
+
+    void Juger() {
+        float tempsCourant = timer/timerTotal;
+
+        if (repasEstTermine) {
+            if (tempsCourant > 0.5) {
+                tempsEnCours = false;
+                scoreTotal += scoreRepas*110;
+                repasEstTermine = false;
+                Debug.Log(scoreTotal);
+            } 
+            else if (tempsCourant > 0) {
+                tempsEnCours = false;
+                scoreTotal += scoreRepas*50;
+                repasEstTermine = false;
+                Debug.Log(scoreTotal);
+            } 
+            else {
+                tempsEnCours = false;
+                scoreTotal -= scoreRepas*110;
+                repasEstTermine = false;
+                Debug.Log(scoreTotal);
+            }
+        }
+    }
+
+
+    void Update()
+    {
+        //Timer
+        if (tempsEnCours)
+        {
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+            }
+            else {
+                Juger();
+                timer = 0;
+                tempsEnCours = false;
+            }
+        }
     }
 
 }
