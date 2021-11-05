@@ -10,6 +10,8 @@ public class MouvementA : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = 2f;
+
+    private Animator animatorPerso;
     
     private float gravityValue = -9.81f;
 
@@ -32,13 +34,18 @@ public class MouvementA : MonoBehaviour
     private float limiteZPos = -0.9f;
     private float limiteZNeg = -10f;
 
+    // void Awake(){
+    //     playerInput = new PlayerControlsTurorial();
 
+    //     playerInput.Player.Movement.performed += ctx => currentMovement = ctx.ReadValue<Vector2>();
+    // }
     private void Start()
     {
        
         controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         controller.height = controllerHeight;
+        animatorPerso = GetComponent<Animator>();
     }
 
     void Update()
@@ -52,11 +59,14 @@ public class MouvementA : MonoBehaviour
 
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
-        controller.Move(move * Time.deltaTime * playerSpeed);
 
+        
+        controller.Move(move * Time.deltaTime * playerSpeed);
+        
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
@@ -65,16 +75,20 @@ public class MouvementA : MonoBehaviour
         //Calculer limites de jeu
         if (controller.transform.position.x >= limiteXPos) {
             controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
+            
         } 
         else if (controller.transform.position.x <= limiteXNeg) {
             controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
+            
         }
     
         if (controller.transform.position.z >= limiteZPos) {
             controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
+            
         } 
         else if (controller.transform.position.z <= limiteZNeg) {
             controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
+           
         }
     }
 

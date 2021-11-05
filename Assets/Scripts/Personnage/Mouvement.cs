@@ -13,10 +13,14 @@ public class Mouvement : MonoBehaviour
     
     private float gravityValue = -9.81f;
     private float controllerHeight = 0f;
-    private float controllerCenter = 0.58f;
+    private float controllerCenter = 0.66f;
+
+    Vector2 currentMovement;
+    bool movementPressed;
     
     [Header("Animations")]
     // public Animator animPorte;
+    private Animator animatorPerso;
 
     [Header("Hotspots")]
     // public HotSpot scriptHot;
@@ -28,14 +32,27 @@ public class Mouvement : MonoBehaviour
     private float limiteZPos = 4.8f;
     private float limiteZNeg = -4.8f;
 
+    int marcherHash;
 
+    // void Awake()
+    // {
+        
+    //     playerInput = new PlayerControlsBeta();
+    //     playerInput.Player.Move.performed += ctx => Debug.Log(ctx.ReadValueAsObject());
+            
+        
+    // }
     private void Start()
     {
-       
-        controller = gameObject.AddComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        marcherHash = Animator.StringToHash("marcher");
+        controller = gameObject.AddComponent<CharacterController>();
+        
+        animatorPerso = GetComponent<Animator>();
         controller.height = controllerHeight;
+        
         controller.center = new Vector3(0, controllerCenter, 0);
+       
     }
 
     void Update()
@@ -50,7 +67,7 @@ public class Mouvement : MonoBehaviour
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
         controller.Move(move * Time.deltaTime * playerSpeed);
-
+        
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
@@ -75,29 +92,40 @@ public class Mouvement : MonoBehaviour
         }
     }
 
-    
-    public void Ouvrir(InputAction.CallbackContext context)
-    {
-
-        //À modifier pour les animations finales
-
-        // if (context.performed && scriptHot.anim == true)
-        // {
-            
-        //     animPorte.SetTrigger("Play");
-            
-        // }else if(context.performed && scriptHot2.anim == true){
-            
-            
-        //     animStove.SetTrigger("Play");
-        // }
-        // else if(context.performed && scriptHot3.anim == true){
-            
-            
-        //     animFour.SetTrigger("Play");
-        // }     
-        
+    void handleMovement() {
+        bool marcher = animatorPerso.GetBool(marcherHash);
     }
+    // void OnEnable(){
+    //     playerInput.Player.Enable();
+    // }
+
+    // void OnDisable(){
+    //     playerInput.Player.Disable();
+    // }
+
+
+    // public void Ouvrir(InputAction.CallbackContext context)
+    // {
+
+    //     //À modifier pour les animations finales
+
+    //     // if (context.performed && scriptHot.anim == true)
+    //     // {
+            
+    //     //     animPorte.SetTrigger("Play");
+            
+    //     // }else if(context.performed && scriptHot2.anim == true){
+            
+            
+    //     //     animStove.SetTrigger("Play");
+    //     // }
+    //     // else if(context.performed && scriptHot3.anim == true){
+            
+            
+    //     //     animFour.SetTrigger("Play");
+    //     // }     
+        
+    // }
 
     
 }
