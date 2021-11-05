@@ -1889,11 +1889,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6792825863729521, guid: 4e63da82abd49c04294662f013d09c18, type: 3}
-<<<<<<< Updated upstream
 --- !u!1 &413816135
-=======
---- !u!1 &379007070
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
