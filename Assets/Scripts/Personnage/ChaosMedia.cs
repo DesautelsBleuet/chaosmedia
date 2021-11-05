@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Sandbox/Antoine/ChaosMedia.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Personnage/ChaosMedia.inputactions'
 
 using System;
 using System.Collections;
