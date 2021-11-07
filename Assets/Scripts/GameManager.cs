@@ -34,15 +34,20 @@ public class GameManager : MonoBehaviour
     [ShowOnly] public string[] jelloIngredients = new string[] {"jus"};
     private float jelloTimer = 30f;
 
+    //Score global
     private float scoreTotal = 0f;
+    private float timerGlobal = 300f;
+    private float debutDisco = 60f;
+    private bool tempsGlobalEnCours = false;
+
+    //Recette courant
     private int repasChoisi;
-
-    private float timer;
-    private float timerTotal;
+    private float timerRecette;
+    private float recetteTimerTotal;
     private float scoreRepas;
-    bool tempsEnCours = false;
-
-    bool repasEstTermine = true;
+    private bool tempsRecetteEnCours = false;
+    private bool repasEstTermine = true;
+    private float discoMultiplicateur = 1f;
 
 
     void Start() {
@@ -68,14 +73,19 @@ public class GameManager : MonoBehaviour
         repasArray.Add("jello", jelloIngredients);
         timersArray.Add("jello", jelloTimer);
 
+        //Timer partie
+        tempsGlobalEnCours = true;
 
+        choisirRepas();
+    }
 
+    void choisirRepas() {
         //Choix du repas
         repasChoisi = Random.Range(1, repasArray.Count);
         scoreRepas = timersArray.ElementAt(repasChoisi).Value;
-        timer = timersArray.ElementAt(repasChoisi).Value;
-        timerTotal = timer;
-        tempsEnCours = true;
+        timerRecette = timersArray.ElementAt(repasChoisi).Value;
+        recetteTimerTotal = timerRecette;
+        tempsRecetteEnCours = true;
     }
 
     void ajoutIngredient(string ingredient) {
@@ -135,24 +145,24 @@ public class GameManager : MonoBehaviour
     }
 
     void Juger() {
-        float tempsCourant = timer/timerTotal;
+        float tempsCourant = timerRecette/recetteTimerTotal;
 
         if (repasEstTermine) {
             if (tempsCourant > 0.5) {
-                tempsEnCours = false;
-                scoreTotal += scoreRepas*110;
+                tempsRecetteEnCours = false;
+                scoreTotal += scoreRepas*110*discoMultiplicateur;
                 repasEstTermine = false;
                 Debug.Log(scoreTotal);
             } 
             else if (tempsCourant > 0) {
-                tempsEnCours = false;
-                scoreTotal += scoreRepas*50;
+                tempsRecetteEnCours = false;
+                scoreTotal += scoreRepas*50*discoMultiplicateur;
                 repasEstTermine = false;
                 Debug.Log(scoreTotal);
             } 
             else {
-                tempsEnCours = false;
-                scoreTotal -= scoreRepas*110;
+                tempsRecetteEnCours = false;
+                scoreTotal -= scoreRepas*110*discoMultiplicateur;
                 repasEstTermine = false;
                 Debug.Log(scoreTotal);
             }
@@ -162,17 +172,32 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Timer
-        if (tempsEnCours)
-        {
-            if (timer > 0)
+        //Timer global
+        if (tempsGlobalEnCours) {
+            if (timerGlobal <= debutDisco) {
+                discoMultiplicateur = 3f;
+            }
+            if (timerGlobal> 0)
             {
-                timer -= Time.deltaTime;
+                timerGlobal-= Time.deltaTime;
+            }
+            else {
+                timerGlobal = 0;
+                tempsGlobalEnCours = false;
+                Debug.Log("fin de la partie");
+            }
+        }
+        //Timer recette
+        if (tempsRecetteEnCours)
+        {
+            if (timerRecette> 0)
+            {
+                timerRecette -= Time.deltaTime;
             }
             else {
                 Juger();
-                timer = 0;
-                tempsEnCours = false;
+                timerRecette = 0;
+                tempsRecetteEnCours = false;
             }
         }
     }
