@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ccube : MonoBehaviour
+public class objet : MonoBehaviour
 {
     public Transform objectToFollow;
     public Vector3 offset;

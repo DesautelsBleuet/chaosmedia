@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
             //Timer partie
             tempsGlobalEnCours = true;
 
+            genererAssiette();
             choisirRepas();
         }
     }
@@ -95,6 +96,15 @@ public class GameManager : MonoBehaviour
         timerRecette = timersArray.ElementAt(repasChoisi).Value;
         recetteTimerTotal = timerRecette;
         tempsRecetteEnCours = true;
+    }
+
+    void genererAssiette() {
+        int type = Random.Range(1, 6);
+        if (type == 5) {
+            Debug.Log("vinyle");
+        } else {
+            Debug.Log("regulière");
+        }
     }
 
     void ajoutIngredient(string ingredient) {
@@ -181,6 +191,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        genererAssiette();
+
         //Timer global
         if (tempsGlobalEnCours) {
             if (timerGlobal <= debutDisco) {
