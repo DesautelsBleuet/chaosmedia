@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Audio
+    public GameObject audio;
+
+
     //Scene
     public Scene scene;
     string gameScene = "scene_beta"; 
@@ -176,6 +180,8 @@ public class GameManager : MonoBehaviour
                 Debug.Log(scoreTotal);
             }
         }
+
+        audio.SendMessage("test");
     }
 
 
