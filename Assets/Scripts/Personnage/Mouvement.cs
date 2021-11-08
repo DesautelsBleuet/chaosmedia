@@ -36,12 +36,10 @@ public class Mouvement : MonoBehaviour
 
     // void Awake()
     // {
-        
     //     playerInput = new PlayerControlsBeta();
     //     playerInput.Player.Move.performed += ctx => Debug.Log(ctx.ReadValueAsObject());
-            
-        
     // }
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();

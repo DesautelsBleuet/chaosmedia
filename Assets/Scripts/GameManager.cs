@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Scene
+    public Scene scene;
+    string gameScene = "scene_beta"; 
+    
     //pain, viande, fromage, tomate, laitue, jus
     List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
@@ -51,32 +55,37 @@ public class GameManager : MonoBehaviour
 
 
     void Start() {
-        //Ajout repas
-        repasArray.Add("burger", burgerIngredients);
-        timersArray.Add("burger", burgerTimer);
+        //Scenes
+        scene = SceneManager.GetActiveScene();
 
-        repasArray.Add("platViande", platViandeIngredients);
-        timersArray.Add("platViande", platViandeTimer);
+        if (scene.name == gameScene) {
+            //Ajout repas
+            repasArray.Add("burger", burgerIngredients);
+            timersArray.Add("burger", burgerTimer);
 
-        repasArray.Add("brochette", brochetteIngredients);
-        timersArray.Add("brochette", brochetteTimer);
+            repasArray.Add("platViande", platViandeIngredients);
+            timersArray.Add("platViande", platViandeTimer);
 
-        repasArray.Add("sandwich", sandwichIngredients);
-        timersArray.Add("sandwich", sandwichTimer);
+            repasArray.Add("brochette", brochetteIngredients);
+            timersArray.Add("brochette", brochetteTimer);
 
-        repasArray.Add("salade", saladeIngredients);
-        timersArray.Add("salade", saladeTimer);
+            repasArray.Add("sandwich", sandwichIngredients);
+            timersArray.Add("sandwich", sandwichTimer);
 
-        repasArray.Add("croqueMonsieur", croqueMonsieurIngredients);
-        timersArray.Add("croqueMonsieur", croqueMonsieurTimer);
+            repasArray.Add("salade", saladeIngredients);
+            timersArray.Add("salade", saladeTimer);
 
-        repasArray.Add("jello", jelloIngredients);
-        timersArray.Add("jello", jelloTimer);
+            repasArray.Add("croqueMonsieur", croqueMonsieurIngredients);
+            timersArray.Add("croqueMonsieur", croqueMonsieurTimer);
 
-        //Timer partie
-        tempsGlobalEnCours = true;
+            repasArray.Add("jello", jelloIngredients);
+            timersArray.Add("jello", jelloTimer);
 
-        choisirRepas();
+            //Timer partie
+            tempsGlobalEnCours = true;
+
+            choisirRepas();
+        }
     }
 
     void choisirRepas() {
@@ -200,6 +209,17 @@ public class GameManager : MonoBehaviour
                 tempsRecetteEnCours = false;
             }
         }
+    }
+
+    //Scene change
+    public void accueilInscription()
+    {
+        SceneManager.LoadScene("Inscription");
+    }
+
+    public void debutCuisine()
+    {
+        SceneManager.LoadScene(gameScene);
     }
 
 }
