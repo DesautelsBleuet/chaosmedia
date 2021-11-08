@@ -88,6 +88,12 @@ public class Mouvement : MonoBehaviour
         else if (controller.transform.position.z <= limiteZNeg) {
             controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
         }
+
+        if (input.x != 0 || input.y != 0) {
+            animatorPerso.SetBool("marcher", true);
+        } else {
+            animatorPerso.SetBool("marcher", false);
+        }
     }
 
     void handleMovement() {

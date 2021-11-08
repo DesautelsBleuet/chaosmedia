@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     private float debutDisco = 60f;
     private bool tempsGlobalEnCours = false;
 
-    //Recette courant
+    //Recette courante
     private int repasChoisi;
     private float timerRecette;
     private float recetteTimerTotal;
