@@ -1,7 +1,8 @@
-
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class InputManager : Singleton<InputManager>
+
+// [DefaultExecutionOrder(-1)]
+public class InputManager : MonoBehaviour
 {
 
     #region Events
