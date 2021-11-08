@@ -4628,6 +4628,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f3e92f90b58f547a1a9342d1cdc66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  scene:
+    m_Handle: 0
+  burgerIngredients:
+  - fromage
+  - pain
+  - viande
+  - laitue
+  - tomate
+  platViandeIngredients:
+  - viande
+  - laitue
+  brochetteIngredients:
+  - viande
+  - laitue
+  - tomate
+  sandwichIngredients:
+  - pain
+  - viande
+  - tomate
+  - laitue
+  saladeIngredients:
+  - laitue
+  - tomate
+  - fromage
+  croqueMonsieurIngredients:
+  - fromage
+  - pain
+  - viande
+  jelloIngredients:
+  - jus
 --- !u!114 &1630638266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4775,34 +4806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boost: 3.5
-  positionLerpTime: 0.2
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.01
-  invertY: 0
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -5845,6 +5848,7 @@ MonoBehaviour:
   scriptHot: {fileID: 1801515109}
   scriptHot2: {fileID: 193966400}
   scriptHot3: {fileID: 725684926}
+  websocket: {fileID: 1630638263}
 --- !u!114 &2024160758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5906,6 +5910,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d664f674-78ff-47a9-9f3f-475a1c715842
     m_ActionName: Player/Camera
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12c15b82-4d01-47a4-8ed3-b2ce55850e8c
+    m_ActionName: Touch/PrimaryContact
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 752fa866-9d36-4e19-bf76-d8e4f5aa86ba
+    m_ActionName: Touch/PrimaryPosition
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

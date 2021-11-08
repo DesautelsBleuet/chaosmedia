@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WebSocketSharp;
 using UnityEngine.InputSystem;
 
 public class MouvementA : MonoBehaviour
@@ -26,6 +27,9 @@ public class MouvementA : MonoBehaviour
     public HotSpot scriptHot;
     public HotSpot scriptHot2;
     public HotSpot scriptHot3;
+
+    [Header("Websockets")]
+    public GameObject websocket;
 
     
     //Limites de jeu
@@ -66,6 +70,8 @@ public class MouvementA : MonoBehaviour
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            var sn = websocket.GetComponent<webClient>();
+            sn.HandleWSMovements(move.x, move.z);
             
         }
 
