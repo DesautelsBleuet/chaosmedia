@@ -28,7 +28,7 @@ public class Mouvement : MonoBehaviour
     
     //Limites de jeu
     private float limiteXPos = 5.8f;
-    private float limiteXNeg = -5.7f;
+    private float limiteXNeg = -9f;
     private float limiteZPos = 4.8f;
     private float limiteZNeg = -4.8f;
 
