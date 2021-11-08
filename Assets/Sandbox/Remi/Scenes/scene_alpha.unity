@@ -4628,7 +4628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f3e92f90b58f547a1a9342d1cdc66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
   scene:
     m_Handle: 0
   burgerIngredients:

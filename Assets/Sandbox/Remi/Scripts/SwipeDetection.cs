@@ -1,8 +1,16 @@
 // using System.Collections;
 // using UnityEngine;
-
+// using UnityEngine.InputSystem;
 // public class SwipeDetection : MonoBehaviour
 // {
+
+//     [SerializeField]
+//     private float minimumDistance = .2f;
+//     [SerializeField]
+//     private float maximumTime = 1f;
+
+
+
 //     private InputManager inputManager;
 
 //     private Vector2 startPosition;
@@ -30,6 +38,9 @@
 //         DetectSwipe();
 //     }
 //     private void DetectSwipe() {
-
+//         if( Vector3.Distance(startPosition, endPosition) >= minimumDistance && 
+//         (endTime - startTime) <= maximumTime) {
+//             Debug.DrawLine(startPosition, endPosition, Color.red, 5f);
+//         }
 //     }
 // }
