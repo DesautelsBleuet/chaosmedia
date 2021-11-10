@@ -8,8 +8,9 @@ public class Assiette : MonoBehaviour
     public GameObject GameManager;
 
     void OnTriggerEnter(Collider other){
-    if(other.tag == "Player"){
-       GameManager.SendMessage("ajoutIngredient", assiette.tag);
-    }
+        if(other.tag == "Player"){
+            GameManager.SendMessage("ajoutIngredient", other.GetComponent<Mouvement>().ingredient.tag);
+            other.GetComponent<Mouvement>().ingredientScript.SendMessage("mettreAssiette", this.gameObject);
+        }
     }
 }

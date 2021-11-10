@@ -32,18 +32,14 @@ public class Mouvement : MonoBehaviour
     private float limiteZPos = 4.8f;
     private float limiteZNeg = -4.8f;
 
-    int marcherHash;
-
-    // void Awake()
-    // {
-    //     playerInput = new PlayerControlsBeta();
-    //     playerInput.Player.Move.performed += ctx => Debug.Log(ctx.ReadValueAsObject());
-    // }
+    //Repas
+    [ShowOnly] public bool isCarryingObject = false;
+    [ShowOnly] public GameObject ingredient;
+    [ShowOnly] public GameObject ingredientScript;
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        marcherHash = Animator.StringToHash("marcher");
         controller = gameObject.AddComponent<CharacterController>();
         
         animatorPerso = GetComponent<Animator>();
@@ -96,9 +92,18 @@ public class Mouvement : MonoBehaviour
         }
     }
 
-    void handleMovement() {
-        bool marcher = animatorPerso.GetBool(marcherHash);
+    void objectTaken(GameObject origin) {
+        if (!isCarryingObject) {
+            isCarryingObject = true;
+            ingredient = origin.GetComponent<objet>().objectToMove;
+            ingredientScript = origin;
+        }
     }
+    
+    void queryCarrying(GameObject origin) {
+        Debug.Log(isCarryingObject);
+    }
+
     // void OnEnable(){
     //     playerInput.Player.Enable();
     // }

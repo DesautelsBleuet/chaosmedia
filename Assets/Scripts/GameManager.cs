@@ -91,7 +91,8 @@ public class GameManager : MonoBehaviour
 
     void choisirRepas() {
         //Choix du repas
-        repasChoisi = Random.Range(1, repasArray.Count);
+        // repasChoisi = Random.Range(1, repasArray.Count);
+        repasChoisi = 1;
         scoreRepas = timersArray.ElementAt(repasChoisi).Value;
         timerRecette = timersArray.ElementAt(repasChoisi).Value;
         recetteTimerTotal = timerRecette;
@@ -115,10 +116,10 @@ public class GameManager : MonoBehaviour
     void verifierRepas()
     {
       
-       for (int i = 0; i < repasArray.Count; i++)
-       {
-            string repas = repasArray.ElementAt(i).Key;
-            string[] ingredientsNeeded = repasArray.ElementAt(i).Value;
+    //    for (int i = 0; i < repasArray.Count; i++)
+    //    {
+            string repas = repasArray.ElementAt(repasChoisi).Key;
+            string[] ingredientsNeeded = repasArray.ElementAt(repasChoisi).Value;
             List<string> allNeeded = new List<string>();
             string done = "false";
 
@@ -159,7 +160,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log(repas + "est terminé"); //Changer pour output
                 repasEstTermine = true;
             }
-        }
+        // }
 
     }
 
@@ -191,7 +192,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        genererAssiette();
+        // genererAssiette();
 
         //Timer global
         if (tempsGlobalEnCours) {
