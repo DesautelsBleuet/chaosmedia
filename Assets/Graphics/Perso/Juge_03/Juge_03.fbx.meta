@@ -3,22 +3,7 @@ guid: 38c498020c757cb48801849f95327452
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cardboard.001
-    second: {fileID: 2100000, guid: f3e313d53e7c5ab4ab3dfd9980c9644e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MicrosoftTeams-image (1)
-    second: {fileID: 2100000, guid: 481668ab13ff88d4a9d8efd652732311, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: MicrosoftTeams-image (1)
-    second: {fileID: 2800000, guid: 0f247474016fc1b4fa36d6ae40bafc15, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
