@@ -14,6 +14,6 @@ public class audioTemplate : MonoBehaviour
     void Méthode()
     {
         //Utiliser la ligne suivant pour appeller un son
-        musiqueFond.SendMessage("fonction"); //Répéter pour chaque Game Object
+        musiqueFond.SendMessage("Jouer"); //Répéter pour chaque Game Object
     }
 }
