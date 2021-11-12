@@ -9,11 +9,11 @@ public class audioTemplate : MonoBehaviour
     *   Mouvement.cs pour les sons générés par le personnage
     *   Voir programmeurs pour savoir où mettre les appels exactements
     */
-    public GameObject audio; //Mettre ici tous les Game Ojects des sons
+    public GameObject musiqueFond; //Mettre ici tous les Game Ojects des sons
 
     void Méthode()
     {
         //Utiliser la ligne suivant pour appeller un son
-        audio.SendMessage("fonction"); //Répéter pour chaque Game Object
+        musiqueFond.SendMessage("Jouer"); //Répéter pour chaque Game Object
     }
 }
