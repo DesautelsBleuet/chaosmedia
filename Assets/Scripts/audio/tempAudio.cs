@@ -14,7 +14,7 @@ public class tempAudio : MonoBehaviour
  }
 
   //Méthode appellée dans l'écouteur de son
-   void Méthode() {
+   void Jouer() {
      audioData.Play(0);
    }
 }
