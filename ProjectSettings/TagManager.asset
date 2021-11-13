@@ -11,6 +11,7 @@ TagManager:
   - laitue
   - jus
   - assiette
+  - viandeCrue
   layers:
   - Default
   - TransparentFX

@@ -110,6 +110,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c24df241-36b0-47b8-8eff-483e5d73186d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ouvrir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d0e5321c-e703-4697-a81c-c4d09cf4e218",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",

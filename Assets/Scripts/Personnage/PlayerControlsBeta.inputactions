@@ -1,5 +1,5 @@
 {
-    "name": "PlayerContriolsBeta",
+    "name": "PlayerControlsBeta",
     "maps": [
         {
             "name": "Player",
@@ -101,6 +101,17 @@
                     "name": "",
                     "id": "7e81bffa-dd96-4932-bf10-4fb856d826b1",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ouvrir",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cbebad3-39d0-4460-b9e8-93b9f686c3b8",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

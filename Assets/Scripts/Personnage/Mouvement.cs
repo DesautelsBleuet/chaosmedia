@@ -32,11 +32,6 @@ public class Mouvement : MonoBehaviour
     private float limiteZPos = 4.8f;
     private float limiteZNeg = -4.8f;
 
-    //Repas
-    [ShowOnly] public bool isCarryingObject = false;
-    [ShowOnly] public GameObject ingredient;
-    [ShowOnly] public GameObject ingredientScript;
-
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -60,6 +55,14 @@ public class Mouvement : MonoBehaviour
 
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
+
+        float click = playerInput.actions["Ouvrir"].ReadValue<float>();
+        if (click == 1) {
+            this.GetComponent<Objets>().click = true;   
+        } else {
+            this.GetComponent<Objets>().click = false;   
+        }
+
         controller.Move(move * Time.deltaTime * playerSpeed);
         
         if (move != Vector3.zero)
@@ -92,18 +95,6 @@ public class Mouvement : MonoBehaviour
         }
     }
 
-    void objectTaken(GameObject origin) {
-        if (!isCarryingObject) {
-            isCarryingObject = true;
-            ingredient = origin.GetComponent<objet>().objectToMove;
-            ingredientScript = origin;
-        }
-    }
-    
-    void queryCarrying(GameObject origin) {
-        Debug.Log(isCarryingObject);
-    }
-
     // void OnEnable(){
     //     playerInput.Player.Enable();
     // }
@@ -114,25 +105,25 @@ public class Mouvement : MonoBehaviour
 
 
     // public void Ouvrir(InputAction.CallbackContext context)
-    // {
+    // {   
+            // Debug.Log("Click!");
+        //À modifier pour les animations finales
 
-    //     //À modifier pour les animations finales
-
-    //     // if (context.performed && scriptHot.anim == true)
-    //     // {
+        // if (context.performed && scriptHot.anim == true)
+        // {
             
-    //     //     animPorte.SetTrigger("Play");
+        //     animPorte.SetTrigger("Play");
             
-    //     // }else if(context.performed && scriptHot2.anim == true){
+        // }else if(context.performed && scriptHot2.anim == true){
             
             
-    //     //     animStove.SetTrigger("Play");
-    //     // }
-    //     // else if(context.performed && scriptHot3.anim == true){
+        //     animStove.SetTrigger("Play");
+        // }
+        // else if(context.performed && scriptHot3.anim == true){
             
             
-    //     //     animFour.SetTrigger("Play");
-    //     // }     
+        //     animFour.SetTrigger("Play");
+        // }     
         
     // }
 

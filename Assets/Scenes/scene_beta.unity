@@ -248,7 +248,6 @@ GameObject:
   - component: {fileID: 31487427}
   - component: {fileID: 31487426}
   - component: {fileID: 31487425}
-  - component: {fileID: 31487424}
   m_Layer: 0
   m_Name: hotspot vide 1
   m_TagString: assiette
@@ -270,20 +269,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &31487424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31487422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 31487425}
-  GameManager: {fileID: 46840869}
 --- !u!65 &31487425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -537,7 +522,6 @@ GameObject:
   - component: {fileID: 94818105}
   - component: {fileID: 94818104}
   - component: {fileID: 94818103}
-  - component: {fileID: 94818102}
   m_Layer: 0
   m_Name: hotspot vide 9
   m_TagString: assiette
@@ -559,20 +543,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &94818102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94818100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 94818103}
-  GameManager: {fileID: 46840869}
 --- !u!65 &94818103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -678,7 +648,6 @@ GameObject:
   - component: {fileID: 106779250}
   - component: {fileID: 106779249}
   - component: {fileID: 106779248}
-  - component: {fileID: 106779247}
   m_Layer: 0
   m_Name: hotspot vide 5
   m_TagString: assiette
@@ -700,20 +669,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &106779247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106779245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 106779248}
-  GameManager: {fileID: 46840869}
 --- !u!65 &106779248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -956,7 +911,6 @@ GameObject:
   - component: {fileID: 160620057}
   - component: {fileID: 160620056}
   - component: {fileID: 160620055}
-  - component: {fileID: 160620054}
   m_Layer: 0
   m_Name: hotspot vide 2
   m_TagString: assiette
@@ -978,20 +932,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &160620054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160620052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 160620055}
-  GameManager: {fileID: 46840869}
 --- !u!65 &160620055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1293,7 +1233,6 @@ GameObject:
   - component: {fileID: 167437070}
   - component: {fileID: 167437069}
   - component: {fileID: 167437068}
-  - component: {fileID: 167437067}
   m_Layer: 0
   m_Name: hotspot spatule
   m_TagString: Untagged
@@ -1315,21 +1254,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &167437067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167437065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &167437068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2348,7 +2272,6 @@ GameObject:
   - component: {fileID: 335546762}
   - component: {fileID: 335546761}
   - component: {fileID: 335546760}
-  - component: {fileID: 335546759}
   m_Layer: 0
   m_Name: hotspot casserolle
   m_TagString: Untagged
@@ -2370,21 +2293,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &335546759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335546757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &335546760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2580,7 +2488,6 @@ GameObject:
   - component: {fileID: 429706623}
   - component: {fileID: 429706622}
   - component: {fileID: 429706621}
-  - component: {fileID: 429706620}
   m_Layer: 0
   m_Name: hotspot pain
   m_TagString: assiette
@@ -2602,20 +2509,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &429706620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429706618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 429706621}
-  GameManager: {fileID: 46840869}
 --- !u!65 &429706621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2690,7 +2583,6 @@ GameObject:
   - component: {fileID: 430673299}
   - component: {fileID: 430673298}
   - component: {fileID: 430673297}
-  - component: {fileID: 430673296}
   m_Layer: 0
   m_Name: hotspot vide 6
   m_TagString: assiette
@@ -2712,20 +2604,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &430673296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430673294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 430673297}
-  GameManager: {fileID: 46840869}
 --- !u!65 &430673297
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2821,7 +2699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.181156
+      value: -4.356
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2870,6 +2748,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
+      propertyPath: m_TagString
+      value: viandeCrue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
@@ -2980,7 +2862,6 @@ GameObject:
   - component: {fileID: 542867957}
   - component: {fileID: 542867956}
   - component: {fileID: 542867955}
-  - component: {fileID: 542867954}
   m_Layer: 0
   m_Name: hotspot stove
   m_TagString: Untagged
@@ -3002,21 +2883,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542867954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542867952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &542867955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3899,7 +3765,6 @@ GameObject:
   - component: {fileID: 845384371}
   - component: {fileID: 845384370}
   - component: {fileID: 845384369}
-  - component: {fileID: 845384368}
   m_Layer: 0
   m_Name: hotspot four
   m_TagString: assiette
@@ -3921,20 +3786,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &845384368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845384366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 845384369}
-  GameManager: {fileID: 46840869}
 --- !u!65 &845384369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4730,11 +4581,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d437773d61af41448b38e9252de9dfcb, type: 3}
   m_PrefabInstance: {fileID: 953285911}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &965518338 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7353015209358123520, guid: bb2b5e14125e38e4fae4490be410bdd4, type: 3}
-  m_PrefabInstance: {fileID: 1299025825}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1002183054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,7 +4593,6 @@ GameObject:
   - component: {fileID: 1002183059}
   - component: {fileID: 1002183058}
   - component: {fileID: 1002183057}
-  - component: {fileID: 1002183056}
   m_Layer: 0
   m_Name: hotspot fromage
   m_TagString: assiette
@@ -4769,20 +4614,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1002183056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002183054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1002183057}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1002183057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4845,11 +4676,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002183054}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1003248476 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
-  m_PrefabInstance: {fileID: 917836077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008155494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,12 +4719,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008155494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
+  m_Script: {fileID: 11500000, guid: 97524bbe2c21282449e1dab497951e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1008155497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6159,7 +5982,6 @@ GameObject:
   - component: {fileID: 1239252671}
   - component: {fileID: 1239252670}
   - component: {fileID: 1239252669}
-  - component: {fileID: 1239252668}
   m_Layer: 0
   m_Name: hotspot vide 4
   m_TagString: assiette
@@ -6181,20 +6003,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1239252668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239252666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1239252669}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1239252669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6402,7 +6210,7 @@ GameObject:
   - component: {fileID: 1263464709}
   - component: {fileID: 1263464708}
   - component: {fileID: 1263464707}
-  - component: {fileID: 1263464706}
+  - component: {fileID: 1263464710}
   m_Layer: 0
   m_Name: hotspot viande
   m_TagString: Untagged
@@ -6424,21 +6232,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1263464706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263464704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1263464707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6501,6 +6294,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263464704}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1263464710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263464704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490f5578f40e25c438bfa5a425095fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 446615776}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1299025825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6526,7 +6333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb2b5e14125e38e4fae4490be410bdd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.07
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb2b5e14125e38e4fae4490be410bdd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6534,7 +6341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb2b5e14125e38e4fae4490be410bdd4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.18
+      value: -1.922
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bb2b5e14125e38e4fae4490be410bdd4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6658,9 +6465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428d4a42149bdeb49879089cc1426088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCarryingObject: 0
-  ingredient: {fileID: 0}
-  ingredientScript: {fileID: 0}
 --- !u!114 &1299025829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6724,6 +6528,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.3346659, z: 1}
   m_Center: {x: 0, y: 0.6781653, z: 0}
+--- !u!114 &1299025831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299025826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649d82a642fd5214b9d3da582ff69355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCarrying: 0
 --- !u!1001 &1305815168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6945,7 +6762,6 @@ GameObject:
   - component: {fileID: 1341985469}
   - component: {fileID: 1341985468}
   - component: {fileID: 1341985467}
-  - component: {fileID: 1341985466}
   m_Layer: 0
   m_Name: hotspot vide 7
   m_TagString: assiette
@@ -6967,20 +6783,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1341985466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341985464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1341985467}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1341985467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7339,7 +7141,6 @@ GameObject:
   - component: {fileID: 1407241063}
   - component: {fileID: 1407241062}
   - component: {fileID: 1407241061}
-  - component: {fileID: 1407241060}
   m_Layer: 0
   m_Name: hotspot planche decouper
   m_TagString: assiette
@@ -7361,20 +7162,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1407241060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407241058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1407241061}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1407241061
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7449,7 +7236,6 @@ GameObject:
   - component: {fileID: 1443149232}
   - component: {fileID: 1443149231}
   - component: {fileID: 1443149230}
-  - component: {fileID: 1443149229}
   m_Layer: 0
   m_Name: hotspot vide 11
   m_TagString: assiette
@@ -7471,20 +7257,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1443149229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443149227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1443149230}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1443149230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8312,7 +8084,6 @@ GameObject:
   - component: {fileID: 1591290988}
   - component: {fileID: 1591290987}
   - component: {fileID: 1591290986}
-  - component: {fileID: 1591290985}
   m_Layer: 0
   m_Name: hotspot essorage
   m_TagString: Untagged
@@ -8334,21 +8105,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1591290985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591290983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1591290986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8650,7 +8406,6 @@ GameObject:
   - component: {fileID: 1605425868}
   - component: {fileID: 1605425867}
   - component: {fileID: 1605425866}
-  - component: {fileID: 1605425865}
   m_Layer: 0
   m_Name: hotspot poubelle
   m_TagString: assiette
@@ -8672,20 +8427,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1605425865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605425863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1605425866}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1605425866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9364,7 +9105,6 @@ GameObject:
   - component: {fileID: 1711986331}
   - component: {fileID: 1711986330}
   - component: {fileID: 1711986329}
-  - component: {fileID: 1711986333}
   m_Layer: 0
   m_Name: hotspot assiette
   m_TagString: assiette
@@ -9448,20 +9188,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1711986333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711986328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1711986329}
-  GameManager: {fileID: 46840869}
 --- !u!1 &1729903610
 GameObject:
   m_ObjectHideFlags: 0
@@ -9584,7 +9310,6 @@ GameObject:
   - component: {fileID: 1735873120}
   - component: {fileID: 1735873119}
   - component: {fileID: 1735873118}
-  - component: {fileID: 1735873117}
   m_Layer: 0
   m_Name: hotspot salade
   m_TagString: Untagged
@@ -9606,21 +9331,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1735873117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735873115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d665704fa197d324fad56b7c98ebc841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 965518338}
-  objectToMove: {fileID: 1003248476}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &1735873118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10136,7 +9846,6 @@ GameObject:
   - component: {fileID: 1813091374}
   - component: {fileID: 1813091373}
   - component: {fileID: 1813091372}
-  - component: {fileID: 1813091371}
   m_Layer: 0
   m_Name: hotspot vide 8
   m_TagString: assiette
@@ -10158,20 +9867,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1813091371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813091369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1813091372}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1813091372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10359,7 +10054,6 @@ GameObject:
   - component: {fileID: 1875337069}
   - component: {fileID: 1875337068}
   - component: {fileID: 1875337067}
-  - component: {fileID: 1875337066}
   m_Layer: 0
   m_Name: hotspot vide 3
   m_TagString: assiette
@@ -10381,20 +10075,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1875337066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875337064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1875337067}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1875337067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10559,7 +10239,6 @@ GameObject:
   - component: {fileID: 1951844772}
   - component: {fileID: 1951844771}
   - component: {fileID: 1951844770}
-  - component: {fileID: 1951844769}
   m_Layer: 0
   m_Name: hotspot vide 10
   m_TagString: assiette
@@ -10581,20 +10260,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1951844769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951844767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 1951844770}
-  GameManager: {fileID: 46840869}
 --- !u!65 &1951844770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11099,7 +10764,6 @@ GameObject:
   - component: {fileID: 2039410923}
   - component: {fileID: 2039410922}
   - component: {fileID: 2039410921}
-  - component: {fileID: 2039410920}
   m_Layer: 0
   m_Name: hotspot frigo
   m_TagString: assiette
@@ -11121,20 +10785,6 @@ Transform:
   m_Father: {fileID: 1645597450}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2039410920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039410918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6988c30afc5449973969a805662a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assiette: {fileID: 2039410921}
-  GameManager: {fileID: 46840869}
 --- !u!65 &2039410921
 BoxCollider:
   m_ObjectHideFlags: 0
