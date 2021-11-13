@@ -4686,6 +4686,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002183054}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1003248476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 68f496a995fdc9c47a8012bfd08eeb1f, type: 3}
+  m_PrefabInstance: {fileID: 917836077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008155494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,7 +4740,7 @@ MonoBehaviour:
   ingredient: {fileID: 0}
   player: {fileID: 0}
   ingredientNeeded: viandeCrue
-  ingredientOutput: {fileID: 0}
+  ingredientOutput: {fileID: 1003248476}
   offset: {x: 0, y: 0, z: 0}
   miniJeuReussi: 1
 --- !u!65 &1008155497
@@ -8428,6 +8433,7 @@ GameObject:
   - component: {fileID: 1605425868}
   - component: {fileID: 1605425867}
   - component: {fileID: 1605425866}
+  - component: {fileID: 1605425865}
   m_Layer: 0
   m_Name: hotspot poubelle
   m_TagString: assiette
@@ -8443,12 +8449,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605425863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.13, y: -0.636, z: -1.82}
-  m_LocalScale: {x: 0.9992488, y: 1, z: 1.0085675}
+  m_LocalPosition: {x: 6.13, y: -0.636, z: -2.01}
+  m_LocalScale: {x: 1.66275, y: 1, z: 1.3424033}
   m_Children: []
   m_Father: {fileID: 1645597450}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1605425865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605425863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c71834047ee4f3418977c894ff3ad4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 0}
+  player: {fileID: 0}
 --- !u!65 &1605425866
 BoxCollider:
   m_ObjectHideFlags: 0

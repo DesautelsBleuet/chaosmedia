@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hotspot_station : MonoBehaviour
 {
-    private Collider other;
     [ShowOnly] public GameObject ingredient;
     [ShowOnly] public Collider player;
 
