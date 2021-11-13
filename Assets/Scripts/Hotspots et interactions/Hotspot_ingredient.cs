@@ -4,46 +4,22 @@ using UnityEngine;
 
 public class Hotspot_ingredient : MonoBehaviour
 {
-    protected GameObject player;
- 
-    public Transform ingredient;
-    private Transform ingredientCarry;
- 
-    protected GameObject main;
+    public GameObject ingredient;
+    private GameObject ingredientCarry;
     public Vector3 offset;
-    private bool isActive = false;
 
-    void Start() {
-        main = GameObject.Find("Arm.R_end");
-        player = GameObject.Find("Dona disco");
-    }
-
-    void FixedUpdate()  {
-        if (isActive) {
-            ingredientCarry.transform.position = main.transform.position + offset;
-        }
-    }
-
-    void OnTriggerEnter(Collider other){
-        if (other.tag == "Player" && !player.GetComponent<Objets>().isCarrying && !player.GetComponent<Objets>().isOccupied)
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "Player" && !other.GetComponent<Objets>().isCarrying)
         {
-                ingredientCarry = Instantiate(ingredient, new Vector3(0, 0, 0), Quaternion.identity);
-                player.GetComponent<Objets>().isCarrying = true;
-                isActive = true;
+            var pos = other.transform.position;
+            if (other.GetComponent<Objets>().click) {
+                ingredientCarry = Instantiate(ingredient, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
+                other.GetComponent<Objets>().isCarrying = true;
+                other.GetComponent<Objets>().ingredient = ingredientCarry;
+                other.GetComponent<Objets>().offset = offset;
+                other.GetComponent<Objets>().currentParent = this.gameObject;
+            }
         }
     }
 
-    void OnTriggerStay(Collider other){
-        if(other.tag == "Player" && !player.GetComponent<Objets>().isOccupied)
-        {
-           player.GetComponent<Objets>().isOccupied = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other){
-        if(other.tag == "Player" && !player.GetComponent<Objets>().isOccupied)
-        {
-           player.GetComponent<Objets>().isOccupied = false;
-        }
-    }
 }

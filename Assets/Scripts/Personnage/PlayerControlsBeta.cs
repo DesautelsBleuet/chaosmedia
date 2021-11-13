@@ -134,6 +134,17 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""388e5132-7b35-42c8-92d8-20a4c884d986"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ouvrir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""733a625c-74f9-4e22-91a4-ffb8d68bf5e2"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",

@@ -10,6 +10,7 @@ public class Mouvement : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = 2f;
+    [ShowOnly] public bool peutBouger = true;
     
     private float gravityValue = -9.81f;
     private float controllerHeight = 0f;
@@ -46,52 +47,54 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
+        if (peutBouger) {
         
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
+            groundedPlayer = controller.isGrounded;
+            if (groundedPlayer && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0f;
+            }
 
-        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+            Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+            Vector3 move = new Vector3(input.x, 0, input.y);
 
-        float click = playerInput.actions["Ouvrir"].ReadValue<float>();
-        if (click == 1) {
-            this.GetComponent<Objets>().click = true;   
-        } else {
-            this.GetComponent<Objets>().click = false;   
-        }
+            float click = playerInput.actions["Ouvrir"].ReadValue<float>();
+            if (click == 1) {
+                this.GetComponent<Objets>().click = true;   
+            } else {
+                this.GetComponent<Objets>().click = false;   
+            }
 
-        controller.Move(move * Time.deltaTime * playerSpeed);
+            controller.Move(move * Time.deltaTime * playerSpeed);
+            
+            if (move != Vector3.zero)
+            {
+                gameObject.transform.forward = move;
+            }
+
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
+
+            // Calculer limites de jeu
+            if (controller.transform.position.x >= limiteXPos) {
+                controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
+            } 
+            else if (controller.transform.position.x <= limiteXNeg) {
+                controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
+            }
         
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
+            if (controller.transform.position.z >= limiteZPos) {
+                controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
+            } 
+            else if (controller.transform.position.z <= limiteZNeg) {
+                controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
+            }
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-        // Calculer limites de jeu
-        if (controller.transform.position.x >= limiteXPos) {
-            controller.transform.position = new Vector3(limiteXPos, controller.transform.position.y, controller.transform.position.z);
-        } 
-        else if (controller.transform.position.x <= limiteXNeg) {
-            controller.transform.position = new Vector3(limiteXNeg, controller.transform.position.y, controller.transform.position.z);
-        }
-    
-        if (controller.transform.position.z >= limiteZPos) {
-            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZPos);
-        } 
-        else if (controller.transform.position.z <= limiteZNeg) {
-            controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, limiteZNeg);
-        }
-
-        if (input.x != 0 || input.y != 0) {
-            animatorPerso.SetBool("marcher", true);
-        } else {
-            animatorPerso.SetBool("marcher", false);
+            if (input.x != 0 || input.y != 0) {
+                animatorPerso.SetBool("marcher", true);
+            } else {
+                animatorPerso.SetBool("marcher", false);
+            }
         }
     }
 
@@ -127,5 +130,5 @@ public class Mouvement : MonoBehaviour
         
     // }
 
-    
+
 }
