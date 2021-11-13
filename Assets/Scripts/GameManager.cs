@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     string gameScene = "scene_beta"; 
     
     //pain, viande, fromage, tomate, laitue, jus
+    //ingrédients dispo beta: viande, laitue, pain, fromage => plat de viande, croque monsieur
     List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
     Dictionary<string, float> timersArray = new Dictionary<string, float>();
