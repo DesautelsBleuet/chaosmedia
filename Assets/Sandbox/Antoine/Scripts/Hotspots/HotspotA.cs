@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hotspot : MonoBehaviour
+public class HotspotA : MonoBehaviour
 {
     protected string objectName;
 

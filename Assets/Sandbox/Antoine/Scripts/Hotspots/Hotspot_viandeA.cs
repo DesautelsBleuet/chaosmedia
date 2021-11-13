@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hotspot_viande : Hotspot
+public class Hotspot_viandeA : HotspotA
 {
     private void Start()
     {
