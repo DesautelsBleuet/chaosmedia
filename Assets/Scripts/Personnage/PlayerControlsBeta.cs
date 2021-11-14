@@ -41,6 +41,38 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""interactionJeuxBas"",
+                    ""type"": ""Button"",
+                    ""id"": ""776240f4-dbd7-41ae-b298-8a594035a9ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""interactionJeuxHaut"",
+                    ""type"": ""Button"",
+                    ""id"": ""1ac066e5-c120-40d3-8403-baa70c0ed114"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""interactionJeuxDroite"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e6d0a77-82ca-4e29-b945-a3c87d4e3637"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""interactionJeuxGauche"",
+                    ""type"": ""Button"",
+                    ""id"": ""bad51680-e3f1-4ddb-b9b2-94930633b928"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -153,6 +185,50 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0dbca769-c8bd-4e2d-9355-b469438c1bb5"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""interactionJeuxBas"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12507d58-6c45-4403-b60f-6b17c4fa3848"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""interactionJeuxHaut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""105e9ed6-9e46-49dc-b175-ab0f1832500c"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""interactionJeuxDroite"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b252b46c-c8cb-45e7-ad3a-60e190ac7bd3"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""interactionJeuxGauche"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -210,6 +286,10 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Ouvrir = m_Player.FindAction("Ouvrir", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
+        m_Player_interactionJeuxBas = m_Player.FindAction("interactionJeuxBas", throwIfNotFound: true);
+        m_Player_interactionJeuxHaut = m_Player.FindAction("interactionJeuxHaut", throwIfNotFound: true);
+        m_Player_interactionJeuxDroite = m_Player.FindAction("interactionJeuxDroite", throwIfNotFound: true);
+        m_Player_interactionJeuxGauche = m_Player.FindAction("interactionJeuxGauche", throwIfNotFound: true);
         // Touch
         m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
         m_Touch_PrimaryContact = m_Touch.FindAction("PrimaryContact", throwIfNotFound: true);
@@ -266,6 +346,10 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Ouvrir;
     private readonly InputAction m_Player_Camera;
+    private readonly InputAction m_Player_interactionJeuxBas;
+    private readonly InputAction m_Player_interactionJeuxHaut;
+    private readonly InputAction m_Player_interactionJeuxDroite;
+    private readonly InputAction m_Player_interactionJeuxGauche;
     public struct PlayerActions
     {
         private @PlayerControlsBeta m_Wrapper;
@@ -273,6 +357,10 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Ouvrir => m_Wrapper.m_Player_Ouvrir;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
+        public InputAction @interactionJeuxBas => m_Wrapper.m_Player_interactionJeuxBas;
+        public InputAction @interactionJeuxHaut => m_Wrapper.m_Player_interactionJeuxHaut;
+        public InputAction @interactionJeuxDroite => m_Wrapper.m_Player_interactionJeuxDroite;
+        public InputAction @interactionJeuxGauche => m_Wrapper.m_Player_interactionJeuxGauche;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,6 +379,18 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                 @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @interactionJeuxBas.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxBas;
+                @interactionJeuxBas.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxBas;
+                @interactionJeuxBas.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxBas;
+                @interactionJeuxHaut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxHaut;
+                @interactionJeuxHaut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxHaut;
+                @interactionJeuxHaut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxHaut;
+                @interactionJeuxDroite.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxDroite;
+                @interactionJeuxDroite.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxDroite;
+                @interactionJeuxDroite.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxDroite;
+                @interactionJeuxGauche.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxGauche;
+                @interactionJeuxGauche.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxGauche;
+                @interactionJeuxGauche.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractionJeuxGauche;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +404,18 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                 @Camera.started += instance.OnCamera;
                 @Camera.performed += instance.OnCamera;
                 @Camera.canceled += instance.OnCamera;
+                @interactionJeuxBas.started += instance.OnInteractionJeuxBas;
+                @interactionJeuxBas.performed += instance.OnInteractionJeuxBas;
+                @interactionJeuxBas.canceled += instance.OnInteractionJeuxBas;
+                @interactionJeuxHaut.started += instance.OnInteractionJeuxHaut;
+                @interactionJeuxHaut.performed += instance.OnInteractionJeuxHaut;
+                @interactionJeuxHaut.canceled += instance.OnInteractionJeuxHaut;
+                @interactionJeuxDroite.started += instance.OnInteractionJeuxDroite;
+                @interactionJeuxDroite.performed += instance.OnInteractionJeuxDroite;
+                @interactionJeuxDroite.canceled += instance.OnInteractionJeuxDroite;
+                @interactionJeuxGauche.started += instance.OnInteractionJeuxGauche;
+                @interactionJeuxGauche.performed += instance.OnInteractionJeuxGauche;
+                @interactionJeuxGauche.canceled += instance.OnInteractionJeuxGauche;
             }
         }
     }
@@ -354,6 +466,10 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnOuvrir(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+        void OnInteractionJeuxBas(InputAction.CallbackContext context);
+        void OnInteractionJeuxHaut(InputAction.CallbackContext context);
+        void OnInteractionJeuxDroite(InputAction.CallbackContext context);
+        void OnInteractionJeuxGauche(InputAction.CallbackContext context);
     }
     public interface ITouchActions
     {

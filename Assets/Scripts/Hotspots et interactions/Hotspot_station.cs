@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class Hotspot_station : MonoBehaviour
 {
     [ShowOnly] public GameObject ingredient;
@@ -12,6 +12,10 @@ public class Hotspot_station : MonoBehaviour
     private GameObject ingredientCarry;
     public Vector3 offset;
 
+    private bool partie1viande;
+
+    private bool partie2viande; 
+
     private bool waitForOutput = false;
     public bool miniJeuReussi = true; //Résultat du mini-jeu, false par défaut mais true pour tester
         
@@ -19,11 +23,13 @@ public class Hotspot_station : MonoBehaviour
         if (other.tag == "Player" && other.GetComponent<Objets>().isCarrying) {
             player = other;
             ingredient = other.GetComponent<Objets>().ingredient;
+            
             if (ingredient.tag == ingredientNeeded) {
                 if (other.GetComponent<Objets>().click) {
                     other.GetComponent<Objets>().isCarrying = false;
                     Destroy(ingredient);
-                    //Mini-jeu
+                    
+                    MiniJeux();
                     output();
                 }
             }
@@ -35,6 +41,7 @@ public class Hotspot_station : MonoBehaviour
     }
 
     void Update() {
+        check();
         if (waitForOutput) {
             if (miniJeuReussi) {
                 Debug.Log("Réussi!");
@@ -42,12 +49,21 @@ public class Hotspot_station : MonoBehaviour
                 player.GetComponent<Mouvement>().peutBouger = true;
                 ingredientCuit();
             } else {
-                Debug.Log("En attente");
+                waitForOutput = true;
                 player.GetComponent<Mouvement>().peutBouger = false;
+                Debug.Log("En attente");
             }
         }
     }
 
+    void check(){
+        if( partie1viande == true && partie2viande == true){
+            miniJeuReussi = true;
+        }
+    }
+void MiniJeux(){
+    miniJeuReussi = false;
+}
     void ingredientCuit() {
         var pos = player.transform.position;
         ingredientCarry = Instantiate(ingredientOutput, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
@@ -57,5 +73,29 @@ public class Hotspot_station : MonoBehaviour
         player.GetComponent<Objets>().offset = offset;
         player.GetComponent<Objets>().currentParent = this.gameObject;
     }
+public void interactionJeuxBas(InputAction.CallbackContext context)
+    {   
 
+        if (context.performed)
+        {
+            partie1viande = true;
+            Debug.Log("1");
+        }   
+        
+    }
+    public void interactionJeuxHaut(InputAction.CallbackContext context)
+    {   
+        if(partie1viande == true){
+            if (context.performed)
+            {
+                partie2viande = true;
+                Debug.Log("2");
+            }
+        }
+           
+        
+    }
 }
+
+
+

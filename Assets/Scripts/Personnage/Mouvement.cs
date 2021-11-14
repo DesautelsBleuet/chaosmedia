@@ -5,16 +5,26 @@ using UnityEngine.InputSystem;
 
 public class Mouvement : MonoBehaviour
 {
+
+    
     private CharacterController controller;
     private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = 2f;
-    [ShowOnly] public bool peutBouger = true;
+    [ShowOnly] public bool peutBouger;
     
     private float gravityValue = -9.81f;
     private float controllerHeight = 0f;
     private float controllerCenter = 0.66f;
+
+    public Vector2 input;
+
+    public Vector3 move;
+
+    
+
+    public Rigidbody rb_perso;
 
     Vector2 currentMovement;
     bool movementPressed;
@@ -37,7 +47,7 @@ public class Mouvement : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         controller = gameObject.AddComponent<CharacterController>();
-        
+        rb_perso = GetComponent<Rigidbody>();
         animatorPerso = GetComponent<Animator>();
         controller.height = controllerHeight;
         
@@ -47,16 +57,19 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-        if (peutBouger) {
         
+            
+        
+                
+            
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)
             {
                 playerVelocity.y = 0f;
             }
-
-            Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
-            Vector3 move = new Vector3(input.x, 0, input.y);
+            float boutonJeuxBas = playerInput.actions["interactionJeuxBas"].ReadValue<float>();
+            input = playerInput.actions["Move"].ReadValue<Vector2>();
+            move = new Vector3(input.x, 0, input.y);
 
             float click = playerInput.actions["Ouvrir"].ReadValue<float>();
             if (click == 1) {
@@ -64,9 +77,11 @@ public class Mouvement : MonoBehaviour
             } else {
                 this.GetComponent<Objets>().click = false;   
             }
-
-            controller.Move(move * Time.deltaTime * playerSpeed);
             
+           if( peutBouger == true){
+            controller.Move(move * Time.deltaTime * playerSpeed);
+            rb_perso.freezeRotation = true;
+            } 
             if (move != Vector3.zero)
             {
                 gameObject.transform.forward = move;
@@ -95,7 +110,7 @@ public class Mouvement : MonoBehaviour
             } else {
                 animatorPerso.SetBool("marcher", false);
             }
-        }
+      
     }
 
     // void OnEnable(){
@@ -107,28 +122,7 @@ public class Mouvement : MonoBehaviour
     // }
 
 
-    // public void Ouvrir(InputAction.CallbackContext context)
-    // {   
-            // Debug.Log("Click!");
-        //À modifier pour les animations finales
-
-        // if (context.performed && scriptHot.anim == true)
-        // {
-            
-        //     animPorte.SetTrigger("Play");
-            
-        // }else if(context.performed && scriptHot2.anim == true){
-            
-            
-        //     animStove.SetTrigger("Play");
-        // }
-        // else if(context.performed && scriptHot3.anim == true){
-            
-            
-        //     animFour.SetTrigger("Play");
-        // }     
-        
-    // }
+    
 
 
 }

@@ -16,7 +16,7 @@ public class webClient : MonoBehaviour
 
     void Start()
     {
-        ws = new WebSocket("ws://chaosmedia.herokuapp.com/socket/1");
+        ws = new WebSocket("wss://chaosmedia.herokuapp.com/socket/1");
         
 
         ws.OnOpen += (sender, e) => {

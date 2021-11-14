@@ -28,6 +28,38 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "interactionJeuxBas",
+                    "type": "Button",
+                    "id": "776240f4-dbd7-41ae-b298-8a594035a9ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "interactionJeuxHaut",
+                    "type": "Button",
+                    "id": "1ac066e5-c120-40d3-8403-baa70c0ed114",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "interactionJeuxDroite",
+                    "type": "Button",
+                    "id": "8e6d0a77-82ca-4e29-b945-a3c87d4e3637",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "interactionJeuxGauche",
+                    "type": "Button",
+                    "id": "bad51680-e3f1-4ddb-b9b2-94930633b928",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -138,6 +170,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0dbca769-c8bd-4e2d-9355-b469438c1bb5",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "interactionJeuxBas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12507d58-6c45-4403-b60f-6b17c4fa3848",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "interactionJeuxHaut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "105e9ed6-9e46-49dc-b175-ab0f1832500c",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "interactionJeuxDroite",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b252b46c-c8cb-45e7-ad3a-60e190ac7bd3",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "interactionJeuxGauche",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
