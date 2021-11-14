@@ -114,8 +114,8 @@ public class GameManager : MonoBehaviour
         verifierRepas();
     }
 
-    void enleverIngredient(string ingredient) {
-        ingredientsChoisis.Remove(ingredient);
+    void enleverIngredient() {
+        ingredientsChoisis.RemoveAt(ingredientsChoisis.Count - 1);
         verifierRepas();
     }
 

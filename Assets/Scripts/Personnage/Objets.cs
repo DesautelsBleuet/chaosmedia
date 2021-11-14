@@ -14,10 +14,7 @@ public class Objets : MonoBehaviour
 
     public bool click = false;
 
-    void Start() {        
-    }
-
-    void FixedUpdate() {
+    void Update() {
         if (isCarrying) {
             ingredient.transform.position = main.transform.position + offset;
         }

@@ -6469,6 +6469,14 @@ MonoBehaviour:
   isCarrying: 0
   ingredient: {fileID: 0}
   currentParent: {fileID: 0}
+  Ouvrir:
+    m_Name: Ouvrir
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bef823fe-41e4-4e9e-aba5-4ec5237adb4e
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings: []
   main: {fileID: 965518338}
   offset: {x: 0, y: 0, z: 0}
   click: 0

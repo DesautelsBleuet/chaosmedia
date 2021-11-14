@@ -28,11 +28,11 @@ public class @PlayerControlsBeta : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Ouvrir"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""51b2d853-8002-4632-a444-c258315cbb6f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press""
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Camera"",
