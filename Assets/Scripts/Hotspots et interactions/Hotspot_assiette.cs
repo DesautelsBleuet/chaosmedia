@@ -44,8 +44,11 @@ public class Hotspot_assiette : MonoBehaviour
         var originalScale = new Vector3(ingredient.transform.localScale.x, ingredient.transform.localScale.y, ingredient.transform.localScale.z);
         ingredientClone = Instantiate(ingredient, new Vector3(0, 0, 0), Quaternion.identity, plate.transform);
         ingredientClone.transform.localPosition = new Vector3(0,0, 0.017f*(nbIngredients+1));
-        ingredientClone.transform.localScale = new Vector3(0.5f,0.5f,2);
-        ingredientClone.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        var plateData = ingredient.GetComponent<ingredient>();
+        // ingredientClone.transform.localScale = new Vector3(0.5f,0.5f,2);
+        // ingredientClone.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        ingredientClone.transform.localScale = new Vector3(plateData.scaleX,plateData.scaleY,plateData.scaleZ);
+        ingredientClone.transform.localRotation = Quaternion.Euler(new Vector3(plateData.rotationX,plateData.rotationY,plateData.rotationZ));
         nbIngredients ++;
         ingredients.Add(ingredientClone);
         originals.Add(originalScale);

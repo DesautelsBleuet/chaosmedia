@@ -28,8 +28,7 @@ public class Hotspot_station : MonoBehaviour
                 if (other.GetComponent<Objets>().click) {
                     other.GetComponent<Objets>().isCarrying = false;
                     Destroy(ingredient);
-                    
-                    MiniJeux();
+                    // MiniJeux();
                     output();
                 }
             }
@@ -56,14 +55,6 @@ public class Hotspot_station : MonoBehaviour
         }
     }
 
-    void check(){
-        if( partie1viande == true && partie2viande == true){
-            miniJeuReussi = true;
-        }
-    }
-void MiniJeux(){
-    miniJeuReussi = false;
-}
     void ingredientCuit() {
         var pos = player.transform.position;
         ingredientCarry = Instantiate(ingredientOutput, new Vector3(pos.x, pos.y, pos.z), Quaternion.identity);
@@ -73,7 +64,18 @@ void MiniJeux(){
         player.GetComponent<Objets>().offset = offset;
         player.GetComponent<Objets>().currentParent = this.gameObject;
     }
-public void interactionJeuxBas(InputAction.CallbackContext context)
+
+    void check(){
+        if( partie1viande == true && partie2viande == true){
+            miniJeuReussi = true;
+        }
+    }
+    
+    void MiniJeux(){
+        miniJeuReussi = false;
+    }
+
+    public void interactionJeuxBas(InputAction.CallbackContext context)
     {   
 
         if (context.performed)
@@ -83,6 +85,7 @@ public void interactionJeuxBas(InputAction.CallbackContext context)
         }   
         
     }
+
     public void interactionJeuxHaut(InputAction.CallbackContext context)
     {   
         if(partie1viande == true){
@@ -92,8 +95,6 @@ public void interactionJeuxBas(InputAction.CallbackContext context)
                 Debug.Log("2");
             }
         }
-           
-        
     }
 }
 
