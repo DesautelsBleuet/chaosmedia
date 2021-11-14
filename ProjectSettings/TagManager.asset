@@ -12,6 +12,8 @@ TagManager:
   - jus
   - assiette
   - viandeCrue
+  - laitueCrue
+  - painCru
   layers:
   - Default
   - TransparentFX
