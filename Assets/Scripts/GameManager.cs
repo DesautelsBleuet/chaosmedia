@@ -16,28 +16,38 @@ public class GameManager : MonoBehaviour
     List<string> ingredientsChoisis = new List<string>();
     Dictionary<string, string[]> repasArray = new Dictionary<string, string[]>();
     Dictionary<string, float> timersArray = new Dictionary<string, float>();
+    Dictionary<string, GameObject> objectsArray = new Dictionary<string, GameObject>();
 
     [Header("Ingrédients des repas")]
-    [ShowOnly] public string[] burgerIngredients = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
+    private string[] burgerIngredients = new string[] {"fromage", "pain", "viande", "laitue", "tomate"};
     private float burgerTimer = 30f;
+    public GameObject burgerObject;
 
-    [ShowOnly] public string[] platViandeIngredients = new string[] {"viande","laitue"};
+    private string[] platViandeIngredients = new string[] {"viande","laitue"};
     private float platViandeTimer = 30f;
+    public GameObject platViandeObject;
 
-    [ShowOnly] public string[] brochetteIngredients = new string[] {"viande", "laitue", "tomate"};
+    private string[] brochetteIngredients = new string[] {"viande", "laitue", "tomate"};
     private float brochetteTimer = 30f;
+    public GameObject brochetteObject;
 
-    [ShowOnly] public string[] sandwichIngredients = new string[] {"pain", "viande", "tomate", "laitue"};
+    private string[] sandwichIngredients = new string[] {"pain", "viande", "tomate", "laitue"};
     private float sandwichTimer = 30f;
+    public GameObject sandwichObject;
 
-    [ShowOnly] public string[] saladeIngredients = new string[] {"laitue", "tomate", "fromage"};
+    private string[] saladeIngredients = new string[] {"laitue", "tomate", "fromage"};
     private float saladeTimer = 30f;
+    public GameObject saladeObject;
 
-    [ShowOnly] public string[] croqueMonsieurIngredients = new string[] {"fromage", "pain", "viande"};
+    private string[] croqueMonsieurIngredients = new string[] {"fromage", "pain", "viande"};
     private float croqueMonsieurTimer = 30f;
+    public GameObject croqueMonsieurObject;
 
-    [ShowOnly] public string[] jelloIngredients = new string[] {"jus"};
+    private string[] jelloIngredients = new string[] {"jus"};
     private float jelloTimer = 30f;
+    public GameObject jelloObject;
+
+    [ShowOnly] public GameObject objectRepasChoisi;
 
     //Score global
     private float scoreTotal = 0f;
@@ -51,9 +61,9 @@ public class GameManager : MonoBehaviour
     private float recetteTimerTotal;
     private float scoreRepas;
     private bool tempsRecetteEnCours = false;
-    private bool repasEstTermine = true;
+    [ShowOnly] public bool repasEstTermine = false;
+    [ShowOnly] public string repas;
     private float discoMultiplicateur = 1f;
-
 
     void Start() {
         //Scenes
@@ -63,24 +73,31 @@ public class GameManager : MonoBehaviour
             //Ajout repas
             repasArray.Add("burger", burgerIngredients);
             timersArray.Add("burger", burgerTimer);
+            objectsArray.Add("burger", burgerObject);
 
             repasArray.Add("platViande", platViandeIngredients);
             timersArray.Add("platViande", platViandeTimer);
+            objectsArray.Add("platViande", platViandeObject);
 
             repasArray.Add("brochette", brochetteIngredients);
             timersArray.Add("brochette", brochetteTimer);
+            objectsArray.Add("brochette", brochetteObject);
 
             repasArray.Add("sandwich", sandwichIngredients);
             timersArray.Add("sandwich", sandwichTimer);
+            objectsArray.Add("sandwich", sandwichObject);
 
             repasArray.Add("salade", saladeIngredients);
             timersArray.Add("salade", saladeTimer);
+            objectsArray.Add("salade", saladeObject);
 
             repasArray.Add("croqueMonsieur", croqueMonsieurIngredients);
             timersArray.Add("croqueMonsieur", croqueMonsieurTimer);
+            objectsArray.Add("croqueMonsieur", croqueMonsieurObject);
 
             repasArray.Add("jello", jelloIngredients);
             timersArray.Add("jello", jelloTimer);
+            objectsArray.Add("jello", jelloObject);
 
             //Timer partie
             tempsGlobalEnCours = true;
@@ -124,7 +141,7 @@ public class GameManager : MonoBehaviour
       
     //    for (int i = 0; i < repasArray.Count; i++)
     //    {
-            string repas = repasArray.ElementAt(repasChoisi).Key;
+            repas = repasArray.ElementAt(repasChoisi).Key;
             string[] ingredientsNeeded = repasArray.ElementAt(repasChoisi).Value;
             List<string> allNeeded = new List<string>();
             string done = "false";
@@ -145,6 +162,7 @@ public class GameManager : MonoBehaviour
                             allNeeded.Remove(ingredient);
                             if (allNeeded.Count == 0) {
                                 done = "true";
+                                objectRepasChoisi = objectsArray.ElementAt(repasChoisi).Value;
                             }
                         }
                     }
