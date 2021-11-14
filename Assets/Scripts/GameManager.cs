@@ -103,14 +103,19 @@ public class GameManager : MonoBehaviour
     void genererAssiette() {
         int type = Random.Range(1, 6);
         if (type == 5) {
-            Debug.Log("vinyle");
+            // Debug.Log("vinyle");
         } else {
-            Debug.Log("regulière");
+            // Debug.Log("regulière");
         }
     }
 
     void ajoutIngredient(string ingredient) {
         ingredientsChoisis.Add(ingredient);
+        verifierRepas();
+    }
+
+    void enleverIngredient(string ingredient) {
+        ingredientsChoisis.Remove(ingredient);
         verifierRepas();
     }
 
