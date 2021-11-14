@@ -11,7 +11,7 @@ public class Mouvement : MonoBehaviour
     private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2f;
+    private float playerSpeed = 3f;
     [ShowOnly] public bool peutBouger;
     
     private float gravityValue = -9.81f;
@@ -43,7 +43,7 @@ public class Mouvement : MonoBehaviour
     private float limiteZPos = 4.8f;
     private float limiteZNeg = -4.8f;
 
-    private void Start()
+     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         controller = gameObject.AddComponent<CharacterController>();
@@ -55,7 +55,7 @@ public class Mouvement : MonoBehaviour
        
     }
 
-    void Update()
+    void FixedUpdate()
     {
         
             
